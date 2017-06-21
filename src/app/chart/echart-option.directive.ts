@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 @Directive({
     selector: 'echart'
 })
-export class EChartOptionDirective1 implements OnInit {
+export class EChartOptionDirective implements OnInit {
     @Input('chartType') chartType: any;
 
     constructor(private el: ElementRef) {}

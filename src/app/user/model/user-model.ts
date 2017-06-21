@@ -3,8 +3,8 @@ export class User {
     userName: string;
     nickName: string;
     password: string;
-    remeberMe:boolean;
+    remeberMe: boolean;
     email: string;
     confirmPassword: string;
-    vcode:string;
+    vcode: string;
 }

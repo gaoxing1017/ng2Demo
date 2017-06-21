@@ -18,7 +18,7 @@ import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
 import { EqualValidatorDirective } from './user/user-register/directives/equal-validator.directive';
 
 import { ChartComponent } from './chart/chart.component';
-import { EChartOptionDirective1 } from './chart/echart-option.directive';
+import { EChartOptionDirective } from './chart/echart-option.directive';
 import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
 import { AmapComponent } from './map/gaode-map/amap/amap.component';
@@ -36,7 +36,7 @@ export function createTranslateLoader(http: Http) {
     ForgetPwdComponent,
     UserRegisterComponent,
     EqualValidatorDirective,
-    EChartOptionDirective1,
+    EChartOptionDirective,
     ChartComponent,
     UseJqueryComponent,
     AmapComponent,

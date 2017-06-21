@@ -19,7 +19,7 @@ export class ChartComponent implements OnInit {
       }
     ],
     title: {
-      text: 'NiceFish访问用户地区分布',
+      text: 'NG2 Demo访问用户地区分布',
       subtext: '纯属虚构',
       x: 'center'
     },
@@ -66,7 +66,7 @@ export class ChartComponent implements OnInit {
 
   barChart = {
     title: {
-      text: 'NiceFish月访问量统计',
+      text: 'NG2 Demo月访问量统计',
       subtext: '纯属虚构',
       x: 'center'
     },
@@ -110,7 +110,7 @@ export class ChartComponent implements OnInit {
 
   lineChart = {
     title: {
-      text: 'NiceFish月访问趋势图',
+      text: 'NG2 Demo月访问趋势图',
       subtext: '纯属虚构',
       x: 'center'
     },

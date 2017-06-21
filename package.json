@@ -1,5 +1,5 @@
 {
-  "name": "NiceFish",
+  "name": "NG2 DEMO",
   "version": "0.0.8",
   "license": "MIT",
   "scripts": {
@@ -37,7 +37,7 @@
     "zone.js": "^0.8.9"
   },
   "devDependencies": {
-    "@angular/cli": "^1.1.2",
+    "@angular/cli": "1.1.1",
     "@angular/compiler-cli": "^4.0.2",
     "@types/jasmine": "2.5.47",
     "@types/node": "7.0.13",
