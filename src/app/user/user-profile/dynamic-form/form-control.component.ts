@@ -1,7 +1,7 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { FieldBase } from './form-field'; 
+import { FieldBase } from './form-field';
 
 @Component({
     selector: 'form-control',

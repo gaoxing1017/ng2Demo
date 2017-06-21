@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 import { AccordionModule } from 'ng2-bootstrap';
 
 import { SharedModule} from '../shared/shared.module';
@@ -21,14 +21,14 @@ import { manageRoutes } from './manage.routes';
     SysParamComponent
   ],
   imports: [
-	  CommonModule,
+    CommonModule,
     AccordionModule,
     SharedModule,
     PostSharedModule,
     RouterModule.forChild(manageRoutes)
   ],
-  exports:[
-  	ManageMainComponent
+  exports: [
+    ManageMainComponent
   ],
   providers: [
     PostTableService,

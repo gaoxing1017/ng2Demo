@@ -6,7 +6,7 @@ import { AmapComponent } from './amap/amap.component';
   selector: 'app-gaode-map',
   templateUrl: './gaode-map.component.html',
   styleUrls: ['./gaode-map.component.scss'],
-  animations:[flyIn]
+  animations: [flyIn]
 })
 export class GaodeMapComponent implements OnInit {
   constructor() { }

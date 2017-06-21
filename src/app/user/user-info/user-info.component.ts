@@ -8,30 +8,30 @@ import { User } from '../model/user-model';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-	  @Input()
-    public panelTitle:string;
+    @Input()
+    public panelTitle: string;
 
     @Input()
-    public userId:string;
+    public userId: string;
 
     @Output()
     public follow = new EventEmitter<string>();
 
-  	public currentUser: User;
+    public currentUser: User;
     public userInfoURL = 'user/getUserInfo';
 
-  	constructor(public http:Http) { 
-      //构造组件的时候，@Input的属性还没有值
+    constructor(public http: Http) {
+      // 构造组件的时候，@Input的属性还没有值
       console.log(this.panelTitle);
     }
 
     ngOnInit() {
-      //组件初始化完成之后，panelTitle才会有值
+      // 组件初始化完成之后，panelTitle才会有值
       console.log(this.panelTitle);
-  	}
+    }
 
-    public loadUserInfo(){
-      this.userInfoURL=this.userInfoURL+"/"+this.userId;
+    public loadUserInfo() {
+      this.userInfoURL = this.userInfoURL + '/' + this.userId;
       return this.http
             .get(this.userInfoURL)
             .map((response: Response) => {
@@ -40,7 +40,7 @@ export class UserInfoComponent implements OnInit {
             })
             .subscribe(
                 data => {
-                    console.log("用户信息>"+data);
+                    console.log('用户信息>' + data);
                 },
                 error => {
                     console.error(error);
@@ -48,7 +48,7 @@ export class UserInfoComponent implements OnInit {
             );
     }
 
-    public followBtnClick(){
-        this.follow.emit("follow");
+    public followBtnClick() {
+        this.follow.emit('follow');
     }
 }

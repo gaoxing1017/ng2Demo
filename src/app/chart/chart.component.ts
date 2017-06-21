@@ -5,14 +5,14 @@ import { fadeIn } from '../animations/fade-in';
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
-  animations:[ fadeIn ]
+  animations: [ fadeIn ]
 })
 export class ChartComponent implements OnInit {
   pieChart = {
     theme: '',
     event: [
       {
-        type: "click",
+        type: 'click',
         cb: function (res) {
           console.log(res);
         }
@@ -25,7 +25,7 @@ export class ChartComponent implements OnInit {
     },
     tooltip: {
       trigger: 'item',
-      formatter: "{a} <br/>{b} : {c} ({d}%)"
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
       orient: 'vertical',
@@ -76,7 +76,7 @@ export class ChartComponent implements OnInit {
       axisPointer: {            // 坐标轴指示器，坐标轴触发有效
         type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
       },
-      formatter: "{b}月{a}:{c}"
+      formatter: '{b}月{a}:{c}'
     },
     grid: {
       left: '3%',
@@ -112,7 +112,7 @@ export class ChartComponent implements OnInit {
     title: {
       text: 'NiceFish月访问趋势图',
       subtext: '纯属虚构',
-      x:"center"
+      x: 'center'
     },
     tooltip: {
       trigger: 'axis'
@@ -120,7 +120,7 @@ export class ChartComponent implements OnInit {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12']
+      data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
     },
     yAxis: {
       type: 'value',
@@ -132,7 +132,7 @@ export class ChartComponent implements OnInit {
       {
         name: '访问量',
         type: 'line',
-        data: [11, 11, 15, 13, 12, 13, 10,123,100,99,66,199]
+        data: [11, 11, 15, 13, 12, 13, 10, 123, 100, 99, 66, 199]
       }
 
     ]

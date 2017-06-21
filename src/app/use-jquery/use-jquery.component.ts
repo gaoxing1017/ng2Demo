@@ -5,14 +5,14 @@ import { fadeIn } from '../animations/fade-in';
   selector: 'app-use-jquery',
   templateUrl: './use-jquery.component.html',
   styleUrls: ['./use-jquery.component.scss'],
-  animations:[ fadeIn ]
+  animations: [ fadeIn ]
 })
 export class UseJqueryComponent implements OnInit {
-  	constructor() {
-  	}
+   constructor() {
+   }
 
-  	ngOnInit() {
-      $("#datepicker").datepicker();
-      $("#tabs").tabs();
-  	}
+   ngOnInit() {
+      $('#datepicker').datepicker();
+      $('#tabs').tabs();
+   }
 }

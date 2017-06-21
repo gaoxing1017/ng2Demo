@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { HttpModule,JsonpModule ,Http} from '@angular/http';
+import { HttpModule, JsonpModule , Http} from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
@@ -15,7 +15,7 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserRegisterService } from './user/user-register/user-register.service';
 import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
 
-import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
+import { EqualValidatorDirective } from './user/user-register/directives/equal-validator.directive';
 
 import { ChartComponent } from './chart/chart.component';
 import { EChartOptionDirective1 } from './chart/echart-option.directive';
@@ -35,7 +35,7 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     ForgetPwdComponent,
     UserRegisterComponent,
-    EqualValidator,
+    EqualValidatorDirective,
     EChartOptionDirective1,
     ChartComponent,
     UseJqueryComponent,
@@ -67,5 +67,5 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
 }
+

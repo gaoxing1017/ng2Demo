@@ -10,7 +10,7 @@ import {fadeIn} from '../../animations/fade-in';
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.scss'],
-  animations:[ fadeIn ]
+  animations: [ fadeIn ]
 })
 export class UserRegisterComponent implements OnInit {
 
@@ -46,7 +46,7 @@ export class UserRegisterComponent implements OnInit {
     'confirmPassword': {
       'required': '重复密码必须输入。',
       'minlength': '密码至少要8位。',
-      'validateEqual': "两次输入的密码不一致。"
+      'validateEqual': '两次输入的密码不一致。'
     },
     'vcode': {
       'required': '验证码必须输入。',
@@ -58,7 +58,7 @@ export class UserRegisterComponent implements OnInit {
   constructor(public fb: FormBuilder,
               public userRegisterService: UserRegisterService,
               public router: Router,
-              public route: ActivatedRoute,) {
+              public route: ActivatedRoute, ) {
   }
 
   ngOnInit() {
@@ -67,7 +67,7 @@ export class UserRegisterComponent implements OnInit {
 
   buildForm(): void {
     this.userForm = this.fb.group({
-      "userName": [
+      'userName': [
         this.userInfo.userName,
         [
           Validators.required,
@@ -75,7 +75,7 @@ export class UserRegisterComponent implements OnInit {
           Validators.maxLength(32)
         ]
       ],
-      "nickName": [
+      'nickName': [
         this.userInfo.nickName,
         [
           Validators.required,
@@ -83,28 +83,28 @@ export class UserRegisterComponent implements OnInit {
           Validators.maxLength(32)
         ]
       ],
-      "email": [
+      'email': [
         this.userInfo.email,
         [
           Validators.required,
-          Validators.pattern("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$")
+          Validators.pattern('^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$')
         ]
       ],
-      "password": [
+      'password': [
         this.userInfo.password,
         [
           Validators.required,
           Validators.minLength(8),
         ]
       ],
-      "confirmPassword": [
+      'confirmPassword': [
         this.userInfo.confirmPassword,
         [
           Validators.required,
           Validators.minLength(8)
         ]
       ],
-      "vcode": [
+      'vcode': [
         this.userInfo.vcode,
         [
           Validators.required,
@@ -123,16 +123,16 @@ export class UserRegisterComponent implements OnInit {
       return;
     }
     const form = this.userForm;
-    for (const field in this.formErrors) {
+    Object.keys(this.formErrors).map(field => {
       this.formErrors[field] = '';
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
-        for (const key in control.errors) {
+        Object.keys(control.errors).map(key => {
           this.formErrors[field] += messages[key] + ' ';
-        }
+        })
       }
-    }
+    })
   }
 
   doRegister() {
@@ -141,7 +141,7 @@ export class UserRegisterComponent implements OnInit {
       this.userRegisterService.register(this.userInfo)
         .subscribe(
           data => {
-            this.router.navigateByUrl("home");
+            this.router.navigateByUrl('home');
           },
           error => {
             this.formErrors.formError = error.message;
@@ -149,13 +149,13 @@ export class UserRegisterComponent implements OnInit {
           }
         );
     } else {
-      this.formErrors.formError = "存在不合法的输入项，请检查。";
+      this.formErrors.formError = '存在不合法的输入项，请检查。';
     }
     console.log(this.userInfo);
   }
 
   testEmail() {
-    let email = this.userForm.get("email").value;
+    let email = this.userForm.get('email').value;
     this.userRegisterService.testEmail(email)
       .subscribe(
         data => {

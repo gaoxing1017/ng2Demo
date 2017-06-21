@@ -36,4 +36,4 @@ import { userRoutes } from './user.routes';
     PostTableService
   ]
 })
-export class UserModule { }
+export class UserModule {}

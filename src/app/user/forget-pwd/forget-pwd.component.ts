@@ -11,29 +11,29 @@ import { fadeIn } from '../../animations/fade-in';
   animations: [ fadeIn ]
 })
 export class ForgetPwdComponent implements OnInit {
-	public user: User = new User();
-	public message: string;
-	public messgeType: string;
-	constructor(
-		public forgetPwdService: ForgetPwdService
-	) { }
+  public user: User = new User();
+  public message: string;
+  public messgeType: string;
+  constructor(
+   public forgetPwdService: ForgetPwdService
+  ) { }
 
-	ngOnInit() {
+  ngOnInit() {
 
-	}
+  }
 
-	public sendValidationEmail():void{
-		this.forgetPwdService.sendValidationEmail(this.user.email)
-			.subscribe(
-				data => {
-					this.message = data.message;
-					this.messgeType = "success";
-				},
-				error => {
-					this.message = error.messge;
-					this.messgeType = "danger";
-				}
-			);
-	}
+  public sendValidationEmail(): void {
+   this.forgetPwdService.sendValidationEmail(this.user.email)
+        .subscribe(
+         data => {
+          this.message = data.message;
+          this.messgeType = 'success';
+        },
+        error => {
+          this.message = error.messge;
+          this.messgeType = 'danger';
+        }
+      );
+  }
 
 }

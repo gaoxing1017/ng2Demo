@@ -11,10 +11,10 @@ import { flyIn } from '../../animations/fly-in';
   ]
 })
 export class CommentTableComponent implements OnInit {
-  public maxSize: number = 5;
-  public itemsPerPage: number = 5;
-  public totalItems: number = 15;
-  public currentPage: number = 1;
+  public maxSize: Number = 5;
+  public itemsPerPage: Number = 5;
+  public totalItems: Number = 15;
+  public currentPage: Number = 1;
   public numPages
   public worker: Worker;
 
@@ -25,13 +25,13 @@ export class CommentTableComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.params.subscribe(
-      params => this.getCommentsByPage(params["page"])
+      params => this.getCommentsByPage(params['page'])
     );
 
-    //启动web worker 加载数据
+    // 启动web worker 加载数据
     this.worker = new Worker('src/app/manage/comment-table/comment-worker.js');
-    this.worker.postMessage({ action: "load" });
-    //注册事件
+    this.worker.postMessage({ action: 'load' });
+    // 注册事件
     this.worker.addEventListener('message', (event: MessageEvent) => {
       console.log(event);
     });
@@ -41,14 +41,14 @@ export class CommentTableComponent implements OnInit {
   }
 
   public getCommentsByPage(page: Number): void {
-    console.log("页码>" + page);
+    console.log('页码>' + page);
   }
 
   public pageChanged(event: any): void {
     let urlTree: UrlTree = this.router.parseUrl(this.router.url);
     const g: UrlSegmentGroup = urlTree.root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = g.segments;
-    this.router.navigateByUrl(s[0] + "/commenttable/page/" + event.page);
+    this.router.navigateByUrl(s[0] + '/commenttable/page/' + event.page);
   }
 
   public delComment(commentId: Number): void {

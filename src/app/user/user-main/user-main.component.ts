@@ -17,14 +17,14 @@ export class UserMainComponent implements OnInit {
   }
 
   onActivate(component) {
-    console.log("组件加载完成>"+component);
+    console.log('组件加载完成>' + component);
   }
 
   onDeactivate(component) {
-    console.log("组件已经移除>"+component);
+    console.log('组件已经移除>' + component);
   }
 
-  doFollow(){
-    alert("自己不能关注自己！");
+  doFollow() {
+    alert('自己不能关注自己！');
   }
 }
